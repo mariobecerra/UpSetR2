@@ -107,6 +107,6 @@ Make_matrix_plot <- function(Mat_data,Set_size_data, Main_bar_data, point_size, 
                   + geom_line(data= Mat_data, aes_string(group = "Intersection", x="x", y="y",
                                                          colour = "color"), size = line_size)
                   + scale_color_identity())
-  Matrix_plot <- ggplot_gtable(ggplot_build(Matrix_plot))
+  # Matrix_plot <- ggplot_gtable(ggplot_build(Matrix_plot))
   return(Matrix_plot)
 }

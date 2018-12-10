@@ -200,6 +200,6 @@ Make_main_bar <- function(Main_bar_data, Q, show_num, ratios, customQ, number_an
                     + geom_vline(xintercept = 0, color = "gray0")
                     + geom_hline(yintercept = 0, color = "gray0"))
   
-  Main_bar_plot <- ggplotGrob(Main_bar_plot)
+  # Main_bar_plot <- ggplotGrob(Main_bar_plot)
   return(Main_bar_plot)
 }

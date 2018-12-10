@@ -138,7 +138,7 @@ Make_size_plot <- function(Set_size_data, sbar_color, ratios, ylabel, scale_sets
     }
   }
   
-  Size_plot <- ggplot_gtable(ggplot_build(Size_plot))
+  # Size_plot <- ggplot_gtable(ggplot_build(Size_plot))
   return(Size_plot)
 }
 
