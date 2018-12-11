@@ -114,13 +114,13 @@
 #'
 #' @import gridExtra
 #' @import ggplot2
-#' @import ggpubr
-#' @import dplyr
 #' @import utils
 #' @import stats
 #' @import methods
 #' @import grDevices
 #' @import scales
+#' @import egg
+#' @import dplyr
 #' @export
 
 upset2 <- function(data, nsets = 5, nintersects = 40, sets = NULL, keep.order = F, set.metadata = NULL, intersections = NULL,
@@ -243,12 +243,20 @@ upset2 <- function(data, nsets = 5, nintersects = 40, sets = NULL, keep.order = 
       theme_void()
   
   
-  out_plot = ggpubr::ggarrange(
+  # out_plot = ggpubr::ggarrange(
+  #   empty_plot + theme(plot.margin = unit(c(0, 0, 0, 0), "lines")),
+  #   Main_bar + theme(plot.margin = unit(c(0, 0, 0, 0), "lines")), 
+  #   Sizes + theme(plot.margin = unit(c(0, 0, 0, 0), "lines")), 
+  #   Matrix + theme(plot.margin = unit(c(0, 0, 0, 0), "lines")),
+  #   align = "hv", 
+  #   widths = rel_widths,
+  #   heights = rel_heights)
+  
+  out_plot = egg::ggarrange(
     empty_plot + theme(plot.margin = unit(c(0, 0, 0, 0), "lines")),
     Main_bar + theme(plot.margin = unit(c(0, 0, 0, 0), "lines")), 
     Sizes + theme(plot.margin = unit(c(0, 0, 0, 0), "lines")), 
     Matrix + theme(plot.margin = unit(c(0, 0, 0, 0), "lines")),
-    align = "hv", 
     widths = rel_widths,
     heights = rel_heights)
   
