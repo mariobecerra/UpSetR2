@@ -118,7 +118,7 @@ Make_main_bar <- function(Main_bar_data, Q, show_num, ratios, customQ, number_an
   labels_arg <- waiver()
   if(mainbar.comma) labels_arg <- scales::comma
   Main_bar_plot <- (ggplot(data = Main_bar_data, aes_string(x = "x", y = "freq")) 
-                    + scale_y_continuous(trans = scale_intersections, labels = labels_arg, limits = c(0, ymax))
+                    #+ scale_y_continuous(trans = scale_intersections, labels = labels_arg, limits = c(0, ymax))
                     + geom_bar(stat = "identity", width = 0.6,
                                fill = Main_bar_data$color)
                     + scale_x_continuous(limits = c(0,(nrow(Main_bar_data)+1 )), expand = c(0,0),
@@ -129,7 +129,7 @@ Make_main_bar <- function(Main_bar_data, Q, show_num, ratios, customQ, number_an
                             axis.title.y = element_text(vjust = -0.8, 
                                                         size = 8.3*y_axis_title_scale), 
                             axis.text.y = element_text(vjust=0.3,size=7*y_axis_tick_label_scale))
-                    + scale_y_continuous(trans = scale_intersections, labels = labels_arg, limits = c(0, ymax))
+                    + scale_y_continuous(trans = scale_intersections, labels = labels_arg, limits = c(0, ymax), expand = c(0, 0))
   )
   if((show_num == "yes") || (show_num == "Yes")){
     if(!intersection.size.comma){
